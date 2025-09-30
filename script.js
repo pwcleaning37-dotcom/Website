@@ -1,4 +1,4 @@
-/* PW Cleaning – script.js (refined) */
+/* PW Cleaning – script.js (refined, fixed lightbox) */
 
 // Smooth scroll for internal anchor links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -14,7 +14,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 // Sticky header shadow
-const header = document.querySelector('.site-header, .navbar');
+const header = document.querySelector('.site-header') || document.querySelector('.navbar');
 const onScroll = () => { if (header) header.classList.toggle('with-shadow', window.scrollY > 4); };
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
@@ -57,15 +57,28 @@ if (form) {
   });
 }
 
-// Simple lightbox for .gallery-item
+// Simple lightbox for gallery images (FIXED)
 (function () {
-  const items = document.querySelectorAll('.gallery-item');
-  if (!items.length) return;
-  const overlay = document.createElement('div'); overlay.className = 'lightbox-overlay';
-  const img = document.createElement('img'); overlay.appendChild(img); document.body.appendChild(overlay);
-  const open = (src, alt) => { img.src = src; img.alt = alt || ''; overlay.style.display = 'flex'; };
-  const close = () => { overlay.style.display = 'none'; };
-  items.forEach(el => { el.addEventListener('click', () => open(el.src, el.alt)); el.style.cursor = 'zoom-in'; });
+  // Target actual <img> elements inside .gallery-item
+  const imgs = document.querySelectorAll('.gallery-item img');
+  if (!imgs.length) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  const big = document.createElement('img');
+  overlay.appendChild(big);
+  document.body.appendChild(overlay);
+
+  const open = (src, alt) => { big.src = src; big.alt = alt || ''; overlay.style.display = 'flex'; };
+  const close = () => { overlay.style.display = 'none'; big.src = ''; };
+
+  imgs.forEach(imgEl => {
+    // Allow optional data-full for high-res
+    const fullSrc = imgEl.dataset.full || imgEl.currentSrc || imgEl.src;
+    imgEl.style.cursor = 'zoom-in';
+    imgEl.addEventListener('click', () => open(fullSrc, imgEl.alt));
+  });
+
   overlay.addEventListener('click', close);
   window.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
