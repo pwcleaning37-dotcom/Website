@@ -7,15 +7,20 @@
   <meta name="description" content="PW Cleaning provides reliable house and office cleaning in Sioux Falls, Tea, Brookings, and nearby communities. Licensed & insured. Free quotes." />
   <!-- IMPORTANT: project site lives at /Website/, so set base -->
   <base href="/Website/">
+  <meta name="theme-color" content="#6A1B9A" />
+  <link rel="preload" as="image" href="images/pw-hero.jpg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- HEADER -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header-row">
-      <a class="brand" href="#home">PW <span>Cleaning</span></a>
-      <nav class="main-nav">
+      <a class="brand" href="#home" aria-label="PW Cleaning home">
+        PW <span>Cleaning</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#why">Why Us</a>
         <a href="#areas">Service Areas</a>
@@ -27,7 +32,10 @@
   </header>
 
   <!-- HERO -->
-  <section id="home" class="hero" style="background-image:url('images/pw-hero.jpg');">
+  <section id="home" class="hero" style="
+      background:
+        linear-gradient(135deg, rgba(106,27,154,.75) 0%, rgba(179,157,219,.6) 60%, rgba(59,21,86,.8) 100%),
+        url('images/pw-hero.jpg') center/cover no-repeat;">
     <div class="hero-content container">
       <h1>Professional Cleaning Services</h1>
       <p>Making homes and offices shine across Sioux Falls and nearby areas.</p>
@@ -35,143 +43,168 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section">
-    <div class="container">
-      <h2>Our Cleaning Services</h2>
-      <p class="muted" style="text-align:center">Choose a plan that fits your home and schedule.</p>
+  <main id="main">
+    <!-- SERVICES -->
+    <section id="services" class="section" aria-labelledby="svc-heading">
+      <div class="container">
+        <h2 id="svc-heading">Our Cleaning Services</h2>
+        <p class="muted" style="text-align:center">Choose a plan that fits your home and schedule.</p>
 
-      <div class="service-grid">
-        <a class="service-link" href="basic-cleaning.html">
-          <article class="service">
-            <img src="images/basic-clean.jpg" alt="Basic house cleaning" loading="lazy" />
-            <h3>Basic Cleaning</h3>
-            <p>Essential upkeep between deep cleans.</p>
-          </article>
-        </a>
+        <div class="service-grid">
+          <a class="service-link" href="basic-cleaning.html" aria-label="Basic Cleaning details">
+            <article class="service">
+              <img src="images/basic-clean.jpg" alt="Basic house cleaning checklist items" loading="lazy" decoding="async" />
+              <h3>Basic Cleaning</h3>
+              <p>Essential upkeep between deep cleans.</p>
+            </article>
+          </a>
 
-        <a class="service-link" href="deep-cleaning.html">
-          <article class="service">
-            <img src="images/deep-clean.jpg" alt="Deep cleaning service" loading="lazy" />
-            <h3>Deep Cleaning</h3>
-            <p>Extra attention to edges, corners, and build-up.</p>
-          </article>
-        </a>
+          <a class="service-link" href="deep-cleaning.html" aria-label="Deep Cleaning details">
+            <article class="service">
+              <img src="images/deep-clean.jpg" alt="Deep cleaning for edges, corners, and buildup" loading="lazy" decoding="async" />
+              <h3>Deep Cleaning</h3>
+              <p>Extra attention to edges, corners, and build-up.</p>
+            </article>
+          </a>
 
-        <a class="service-link" href="move-in-out.html">
-          <article class="service">
-            <img src="images/move-in.jpg" alt="Move-in move-out cleaning" loading="lazy" />
-            <h3>Move-In / Move-Out</h3>
-            <p>Make your new place sparkle or leave the old one spotless.</p>
-          </article>
-        </a>
+          <a class="service-link" href="move-in-out.html" aria-label="Move-In / Move-Out cleaning details">
+            <article class="service">
+              <img src="images/move-in.jpg" alt="Move-in / move-out cleaning results" loading="lazy" decoding="async" />
+              <h3>Move-In / Move-Out</h3>
+              <p>Make your new place sparkle or leave the old one spotless.</p>
+            </article>
+          </a>
 
-        <a class="service-link" href="office-cleaning.html">
-          <article class="service">
-            <img src="images/office-cleaning.jpg" alt="Office janitorial services" loading="lazy" />
-            <h3>Office / Commercial</h3>
-            <p>Desks, conference rooms, kitchens, restrooms, trash & floors.</p>
-          </article>
-        </a>
+          <a class="service-link" href="office-cleaning.html" aria-label="Office and commercial cleaning details">
+            <article class="service">
+              <img src="images/office-cleaning.jpg" alt="Office janitorial services and tidy desks" loading="lazy" decoding="async" />
+              <h3>Office / Commercial</h3>
+              <p>Desks, conference rooms, kitchens, restrooms, trash & floors.</p>
+            </article>
+          </a>
 
-        <a class="service-link" href="add-ons.html">
-          <article class="service">
-            <img src="images/add-ons.jpg" alt="Add-on cleaning services" loading="lazy" />
-            <h3>Add-Ons</h3>
-            <p>Inside oven/fridge, interior windows, bed linens, pet hair removal.</p>
-          </article>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section id="why" class="section alt">
-    <div class="container">
-      <h2>Why Choose PW Cleaning</h2>
-      <ul class="icons">
-        <li>🕒 <strong>On-time & reliable</strong> — we confirm every visit.</li>
-        <li>🧼 <strong>Consistent checklists</strong> — same quality every time.</li>
-        <li>🧾 <strong>Transparent pricing</strong> — no surprises.</li>
-        <li>🌿 <strong>Eco options</strong> — upon request.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- AREAS -->
-  <section id="areas" class="section">
-    <div class="container">
-      <h2>Service Areas</h2>
-      <p style="text-align:center">Sioux Falls • Tea • Brookings • Harrisburg • Brandon • Dell Rapids • Surrounding communities</p>
-    </div>
-  </section>
-
-  <!-- SUCCESSFUL CLIENTS -->
-  <section id="clients" class="section alt">
-    <div class="container">
-      <h2>Successful Clients</h2>
-      <p class="muted" style="text-align:center">Snapshots of completed homes and commercial jobs. (Coming soon)</p>
-    </div>
-  </section>
-
-  <!-- FAQs -->
-  <section id="faqs" class="section">
-    <div class="container">
-      <h2>FAQs</h2>
-      <details>
-        <summary>Do I need to be home?</summary>
-        <p>No — most clients provide a lock code or key. We text when finished.</p>
-      </details>
-      <details>
-        <summary>What about supplies?</summary>
-        <p>We bring everything. If you prefer certain products, tell us!</p>
-      </details>
-      <details>
-        <summary>Are you insured?</summary>
-        <p>Yes — fully insured. We treat every home with respect and care.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section alt">
-    <div class="container contact">
-      <h2>Get a Free Quote</h2>
-      <div class="contact-grid">
-        <div>
-          <p><strong>Call/Text:</strong> (605) 736-4171</p>
-          <p><strong>Email:</strong> <a href="mailto:pwcleaning37@gmail.com">pwcleaning37@gmail.com</a></p>
-          <p class="note">Tell us bedrooms, bathrooms, frequency (one-time, weekly, bi-weekly, monthly), and any add-ons.</p>
+          <a class="service-link" href="add-ons.html" aria-label="Add-On services details">
+            <article class="service">
+              <img src="images/add-ons.jpg" alt="Add-ons like oven/fridge interiors and window cleaning" loading="lazy" decoding="async" />
+              <h3>Add-Ons</h3>
+              <p>Inside oven/fridge, interior windows, bed linens, pet hair removal.</p>
+            </article>
+          </a>
         </div>
-        <form id="contactForm" action="https://formspree.io/f/xrbldwdg" method="POST">
-          <input type="hidden" name="_subject" value="PW Cleaning Website Quote" />
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" placeholder="Your name" required />
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="you@email.com" required />
-          <label for="frequency">How often?</label>
-          <select id="frequency" name="frequency">
-            <option value="">Select frequency</option>
-            <option>One-time</option>
-            <option>Weekly</option>
-            <option>Bi-weekly</option>
-            <option>Monthly</option>
-          </select>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Home size, preferred dates, add-ons…" required></textarea>
-          <button class="btn" type="submit">Request Quote</button>
-        </form>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why" class="section alt" aria-labelledby="why-heading">
+      <div class="container">
+        <h2 id="why-heading">Why Choose PW Cleaning</h2>
+        <ul class="icons">
+          <li>🕒 <strong>On-time & reliable</strong> — we confirm every visit.</li>
+          <li>🧼 <strong>Consistent checklists</strong> — same quality every time.</li>
+          <li>🧾 <strong>Transparent pricing</strong> — no surprises.</li>
+          <li>🌿 <strong>Eco options</strong> — upon request.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AREAS -->
+    <section id="areas" class="section" aria-labelledby="areas-heading">
+      <div class="container">
+        <h2 id="areas-heading">Service Areas</h2>
+        <p style="text-align:center">Sioux Falls • Tea • Brookings • Harrisburg • Brandon • Dell Rapids • Surrounding communities</p>
+      </div>
+    </section>
+
+    <!-- SUCCESSFUL CLIENTS -->
+    <section id="clients" class="section alt" aria-labelledby="clients-heading">
+      <div class="container">
+        <h2 id="clients-heading">Successful Clients</h2>
+        <p class="muted" style="text-align:center">Snapshots of completed homes and commercial jobs. (Coming soon)</p>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs" class="section" aria-labelledby="faqs-heading">
+      <div class="container">
+        <h2 id="faqs-heading">FAQs</h2>
+        <details>
+          <summary>Do I need to be home?</summary>
+          <p>No — most clients provide a lock code or key. We text when finished.</p>
+        </details>
+        <details>
+          <summary>What about supplies?</summary>
+          <p>We bring everything. If you prefer certain products, tell us!</p>
+        </details>
+        <details>
+          <summary>Are you insured?</summary>
+          <p>Yes — fully insured. We treat every home with respect and care.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt" aria-labelledby="contact-heading">
+      <div class="container contact">
+        <h2 id="contact-heading">Get a Free Quote</h2>
+        <div class="contact-grid">
+          <div>
+            <p><strong>Call/Text:</strong> <a href="tel:+16057364171" aria-label="Call or text 605 736 4171">(605) 736-4171</a></p>
+            <p><strong>Email:</strong> <a href="mailto:pwcleaning37@gmail.com">pwcleaning37@gmail.com</a></p>
+            <p class="note">Tell us bedrooms, bathrooms, frequency (one-time, weekly, bi-weekly, monthly), and any add-ons.</p>
+          </div>
+
+          <form id="contactForm" action="https://formspree.io/f/xrbldwdg" method="POST">
+            <input type="hidden" name="_subject" value="PW Cleaning Website Quote" />
+            <!-- Spam honeypot (kept visually hidden via CSS) -->
+            <label class="hp" for="company">Company</label>
+            <input class="hp" id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required />
+
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(605) 555-1234" autocomplete="tel" />
+
+            <label for="frequency">How often?</label>
+            <select id="frequency" name="frequency" autocomplete="off">
+              <option value="">Select frequency</option>
+              <option>One-time</option>
+              <option>Weekly</option>
+              <option>Bi-weekly</option>
+              <option>Monthly</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Home size, preferred dates, add-ons…" required></textarea>
+
+            <button class="btn" type="submit">Request Quote</button>
+
+            <!-- Simple success/error placeholders (toggle with script.js if desired) -->
+            <p id="formStatus" class="small muted" aria-live="polite" style="margin-top:.5rem;"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
-      © 2025 PW Cleaning · Sioux Falls, SD
+      © <span id="year">2025</span> PW Cleaning · Sioux Falls, SD
+      <noscript>© 2025 PW Cleaning · Sioux Falls, SD</noscript>
     </div>
   </footer>
 
   <script src="script.js" defer></script>
+  <script>
+    // Lightweight year fallback if script.js doesn't set it
+    (function () {
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
