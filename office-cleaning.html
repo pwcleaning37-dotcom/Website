@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Office Cleaning | PW Cleaning</title>
   <meta name="description" content="Reliable janitorial services for offices and commercial spaces in Sioux Falls and nearby areas." />
+  <meta name="theme-color" content="#6A1B9A" />
+  <link rel="preload" as="image" href="images/pw-hero.jpg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
     <div class="container header-row">
-      <a class="brand" href="index.html#home">PW <span>Cleaning</span></a>
-      <nav class="main-nav">
+      <a class="brand" href="index.html#home" aria-label="PW Cleaning home">
+        PW <span>Cleaning</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
         <a href="index.html#services">Services</a>
         <a href="index.html#why">Why Us</a>
         <a href="index.html#areas">Service Areas</a>
@@ -21,45 +27,114 @@
     </div>
   </header>
 
-  <section class="page-hero" style="background:
-    linear-gradient(135deg, #6A1B9A 0%, #B39DDB 60%, #3b1556 100%),
-    url('images/pw-hero.jpg') center/cover no-repeat;">
+  <section class="page-hero" style="
+    background:
+      linear-gradient(135deg, #6A1B9A 0%, #B39DDB 60%, #3b1556 100%),
+      url('images/pw-hero.jpg') center/cover no-repeat;">
     <div class="container">
       <h1>Office Cleaning</h1>
       <p>Nightly, weekly, or custom schedules for productive workplaces.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>What’s Included</h2>
-      <ul class="features">
-        <li>Desks, conference rooms, kitchens, breakrooms</li>
-        <li>Restroom sanitization & trash removal</li>
-        <li>Floors: vacuum, sweep & mop</li>
-        <li>High-touch disinfection & dusting</li>
-        <li>Supply restocking on request</li>
-      </ul>
+  <main id="main">
+    <section class="section" aria-labelledby="whats-included">
+      <div class="container">
+        <h2 id="whats-included">What’s Included</h2>
+        <ul class="features">
+          <li>Desks, conference rooms, kitchens, breakrooms</li>
+          <li>Restroom sanitization & trash removal</li>
+          <li>Floors: vacuum, sweep & mop</li>
+          <li>High-touch disinfection & dusting</li>
+          <li>Supply restocking on request</li>
+        </ul>
 
-      <h2 class="center">Typical Rates</h2>
-      <div class="price-grid">
-        <div class="price-card"><img src="images/soffice.jpg" alt=""><div class="pc-body"><h3>Small Office</h3><p class="sqft">Up to 5,000 sqft</p><p class="amount">$0.15 – $0.20 / sq ft</p></div></div>
-        <div class="price-card"><img src="images/moffice.jpg" alt=""><div class="pc-body"><h3>Medium Office</h3><p class="sqft">5,000–10,000 sqft</p><p class="amount">$0.13 – $0.18 / sq ft</p></div></div>
-        <div class="price-card"><img src="images/loffice.jpg" alt=""><div class="pc-body"><h3>Large Office</h3><p class="sqft">10,000+ sqft</p><p class="amount">$0.12 – $0.16 / sq ft</p></div></div>
-        <div class="price-card"><img src="images/stores.jpg" alt=""><div class="pc-body"><h3>Retail</h3><p class="sqft">Varies by store</p><p class="amount">$0.18 – $0.25 / sq ft</p></div></div>
-        <div class="price-card"><img src="images/restaurant.jpg" alt=""><div class="pc-body"><h3>Restaurant</h3><p class="sqft">Dining + BOH</p><p class="amount">$0.20 – $0.30 / sq ft</p></div></div>
-        <div class="price-card"><img src="images/hospital.jpg" alt=""><div class="pc-body"><h3>Healthcare</h3><p class="sqft">Clinics / Facilities</p><p class="amount">$0.25 – $0.35 / sq ft</p></div></div>
+        <h2 class="center" id="typical-rates">Typical Rates</h2>
+        <div class="price-grid" role="list" aria-labelledby="typical-rates">
+          <article class="price-card" role="listitem">
+            <img src="images/soffice.jpg" alt="Small office cleaning up to five thousand square feet" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Small Office</h3>
+              <p class="sqft">Up to 5,000 sqft</p>
+              <p class="amount">$0.15 – $0.20 / sq ft</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/moffice.jpg" alt="Medium office cleaning between five and ten thousand square feet" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Medium Office</h3>
+              <p class="sqft">5,000–10,000 sqft</p>
+              <p class="amount">$0.13 – $0.18 / sq ft</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/loffice.jpg" alt="Large office cleaning for ten thousand square feet or more" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Large Office</h3>
+              <p class="sqft">10,000+ sqft</p>
+              <p class="amount">$0.12 – $0.16 / sq ft</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/stores.jpg" alt="Retail store cleaning services" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Retail</h3>
+              <p class="sqft">Varies by store</p>
+              <p class="amount">$0.18 – $0.25 / sq ft</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/restaurant.jpg" alt="Restaurant dining room and back-of-house cleaning" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Restaurant</h3>
+              <p class="sqft">Dining + BOH</p>
+              <p class="amount">$0.20 – $0.30 / sq ft</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/hospital.jpg" alt="Healthcare clinic and facility cleaning" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Healthcare</h3>
+              <p class="sqft">Clinics / Facilities</p>
+              <p class="amount">$0.25 – $0.35 / sq ft</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="small muted center" style="margin-top:.4rem">
+          Hourly options available (typically $35–$75 per cleaner). Specialized tasks (carpets, waxing, windows) priced separately.
+        </p>
+
+        <p class="center" style="margin-top:1rem">
+          <a class="btn" href="index.html#contact">Request a Walk-Through</a>
+        </p>
+
+        <p class="center">
+          <a class="back-link" href="index.html#services" aria-label="Back to Services">← Back to Services</a>
+        </p>
       </div>
+    </section>
+  </main>
 
-      <p class="small muted center" style="margin-top:.4rem">
-        Hourly options available (typically $35–$75 per cleaner). Specialized tasks (carpets, waxing, windows) priced separately.
-      </p>
-      <p class="center" style="margin-top:1rem"><a class="btn" href="index.html#contact">Request a Walk-Through</a></p>
-      <p class="center"><a class="back-link" href="index.html#services">← Back to Services</a></p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      © <span id="year"></span> PW Cleaning · Sioux Falls, SD
+      <noscript>© 2025 PW Cleaning · Sioux Falls, SD</noscript>
     </div>
-  </section>
+  </footer>
 
-  <footer class="site-footer"><div class="container">© <span id="year"></span> PW Cleaning · Sioux Falls, SD</div></footer>
   <script src="script.js" defer></script>
+  <script>
+    // Year fallback in case script.js doesn't set it
+    (function () {
+      var y = document.getElementById('year');
+      if (y && !y.textContent) y.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
