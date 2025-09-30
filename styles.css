@@ -1,1 +1,186 @@
-body{font-family:Arial;background:#FFF8E7;color:#2E2E2E;} .hero{background-size:cover;min-height:60vh;color:#fff;text-align:center;}
+/* =========================================================
+   PW Cleaning — Global Theme
+   Palette: Purple / Cream / Gold
+========================================================= */
+:root{
+  --purple:#6A1B9A;
+  --lav:#B39DDB;
+  --cream:#FFF8E7;
+  --gold:#C6A664;
+  --char:#2E2E2E;
+  --ink:#1f1b24;
+  --card:#ffffff;
+  --shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--char);
+  background:var(--cream);
+  line-height:1.6;
+}
+img{max-width:100%;display:block}
+
+/* Links & buttons */
+a{color:var(--purple);text-decoration:none}
+a:hover{text-decoration:underline}
+.btn{
+  display:inline-block; border:0; cursor:pointer;
+  background:var(--gold); color:#000;
+  padding:.7rem 1rem; border-radius:.6rem; font-weight:800;
+}
+.btn--light{background:transparent; color:#fff; border:2px solid #fff}
+.btn:hover{filter:brightness(.95)}
+
+/* Layout container */
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+/* =========================================================
+   Header / Nav
+========================================================= */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:var(--purple); color:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+.header-row{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0}
+.brand{font-weight:900; color:#fff; font-size:1.25rem; letter-spacing:.3px}
+.brand span{color:var(--gold)}
+.main-nav a{color:#fff; margin-left:1rem; font-weight:700; opacity:.95}
+.main-nav a:hover{opacity:1}
+
+/* =========================================================
+   Hero (single image with gradient overlay)
+   Set the photo in HTML: <section class="hero" style="background-image:url('images/pw-hero.jpg')">
+========================================================= */
+.hero{
+  position:relative;
+  min-height:60vh;
+  display:grid; place-items:center;
+  text-align:center; color:#fff;
+
+  /* ensure ONE image only */
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45));
+}
+.hero-content{position:relative; z-index:1; padding:3.5rem 1rem}
+.hero h1{font-size:clamp(2rem,4.8vw,3.2rem); margin:.2rem 0 .5rem}
+.hero p{font-size:clamp(1rem,2.2vw,1.15rem); opacity:.97; margin:0 0 1.2rem}
+.hero .btn{margin:.25rem}
+
+/* Optional page hero (no photo) */
+.page-hero{
+  color:#fff; text-align:center;
+  background:linear-gradient(135deg,var(--purple),var(--lav));
+  padding:3rem 1rem; margin-bottom:1.5rem;
+}
+.page-hero h1{margin:0; font-size:clamp(2rem,5vw,3rem)}
+
+/* =========================================================
+   Sections / Headings
+========================================================= */
+.section{padding:3rem 0}
+.section.alt{background:#fff}
+h2{
+  font-size:1.9rem; margin:.2rem 0 1rem; color:var(--ink);
+  display:inline-block; border-bottom:3px solid var(--lav); padding-bottom:.2rem;
+}
+.muted{color:#666}
+
+/* Centered heading helper */
+.heading-center{display:grid; place-items:center; text-align:center; margin-bottom:.7rem}
+.heading-center h2{border:none; margin-bottom:.35rem}
+.heading-center .rule{width:90px; height:4px; background:var(--lav); border-radius:999px}
+
+/* =========================================================
+   Service cards (home page)
+========================================================= */
+.service-grid{
+  display:grid; gap:1rem;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+.service{
+  background:var(--card); border:1px solid #eee; border-radius:.8rem;
+  overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.06);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.service img{width:100%; height:180px; object-fit:cover}
+.service h3{margin:.8rem 1rem .2rem; color:var(--purple)}
+.service p{margin:0 1rem 1rem}
+.service:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+.service-link{display:block; color:inherit}
+
+/* =========================================================
+   Pricing grids (3-across “box buttons”)
+========================================================= */
+.pricing-grid{
+  display:grid; gap:1rem;
+  grid-template-columns:repeat(3,1fr);
+}
+@media (max-width:900px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.pricing-grid{grid-template-columns:1fr}}
+
+.pricing-card{
+  background:var(--card); border:1px solid #eee; border-radius:.9rem;
+  overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.06);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.pricing-card:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+.pricing-card img{width:100%; height:140px; object-fit:cover}
+.pricing-card h3{margin:.7rem 1rem .1rem; color:var(--purple)}
+.pricing-card p{margin:0 1rem .4rem}
+.pricing-card .price{margin:.3rem 1rem 1rem; font-weight:800; color:var(--ink)}
+
+/* =========================================================
+   Icon list / notes
+========================================================= */
+.icons{list-style:none; padding:0; display:grid; gap:.6rem; max-width:900px}
+.icons li{
+  background:#fff; border:1px solid #eee; border-left:6px solid var(--purple);
+  border-radius:.6rem; padding:.8rem 1rem; box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+.note{
+  background:#fff; border:1px dashed var(--lav); padding:.8rem; border-radius:.6rem;
+}
+
+/* =========================================================
+   Contact
+========================================================= */
+.contact .contact-grid{display:grid; gap:1rem}
+@media (min-width:860px){.contact .contact-grid{grid-template-columns:1fr 1fr}}
+.contact form{
+  display:grid; gap:.6rem; background:#fff; border:1px solid #eee; border-radius:.8rem;
+  padding:1rem; box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+.contact input,.contact select,.contact textarea{
+  width:100%; padding:.7rem; border:1px solid #ddd; border-radius:.5rem;
+}
+.contact textarea{min-height:140px}
+
+/* =========================================================
+   Gallery / “Successful Clients”
+========================================================= */
+.gallery-grid{display:grid; gap:10px; grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.gallery-grid{grid-template-columns:1fr}}
+.gallery-item{
+  aspect-ratio:1/1; overflow:hidden; border-radius:.6rem;
+  box-shadow:0 2px 10px rgba(0,0,0,.05); background:#fff;
+}
+.gallery-item img{width:100%; height:100%; object-fit:cover}
+
+/* =========================================================
+   Footer
+========================================================= */
+.site-footer{
+  background:#fff; color:#666; text-align:center;
+  border-top:1px solid #eee; padding:1.2rem; margin-top:2rem;
+}
