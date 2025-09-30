@@ -20,7 +20,7 @@
 *::after{ box-sizing:border-box }
 
 html,body{ margin:0; padding:0 }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth }
 body{
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--char);
@@ -39,6 +39,17 @@ img{ max-width:100%; display:block }
   outline-offset:3px;
 }
 
+/* Skip link */
+.skip-link{
+  position:absolute; left:-9999px; top:auto;
+  width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  position:fixed; left:1rem; top:1rem; width:auto; height:auto;
+  background:#fff; color:var(--ink); padding:.6rem .8rem;
+  border-radius:.4rem; box-shadow:var(--shadow); z-index:99999;
+}
+
 /* Motion respect */
 @media (prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto }
@@ -46,8 +57,9 @@ img{ max-width:100%; display:block }
 }
 
 /* Links & Buttons */
-a{ color:var(--purple); text-decoration:none }
+a{ color:var(--purple); text-decoration:none; transition:opacity .15s ease }
 a:hover{ text-decoration:underline }
+a:where(.btn):hover{ text-decoration:none }
 
 .btn{
   display:inline-block;
@@ -67,8 +79,13 @@ a:hover{ text-decoration:underline }
 .btn.btn-sm{ padding:.55rem .85rem; font-weight:800 }
 .btn--light{ background:transparent; color:#fff; border:2px solid #fff }
 
-/* Layout container */
+.back-link{ color:var(--muted) }
+.back-link:hover{ color:var(--purple) }
+
+/* Utilities */
 .container{ max-width:1100px; margin:0 auto; padding:0 1rem }
+.text-center{ text-align:center }
+.hidden{ display:none!important }
 
 /* =========================================================
    Header / Nav
@@ -119,7 +136,7 @@ a:hover{ text-decoration:underline }
 .hero p{ font-size:clamp(1rem,2.2vw,1.15rem); opacity:.97; margin:0 0 1.2rem }
 .hero .btn{ margin:.25rem }
 
-/* Optional page hero (no photo) */
+/* Optional page hero (used on inner pages) */
 .page-hero{
   color:#fff; text-align:center;
   background:linear-gradient(135deg,var(--purple),var(--lav));
@@ -165,15 +182,37 @@ h2{
 .service-link{ display:block; color:inherit; text-decoration:none }
 
 /* =========================================================
-   Pricing grids (3-across “box buttons”)
+   PRICING grids (cards used across inner pages)
+   (Your HTML uses .price-grid / .price-card)
 ========================================================= */
+.price-grid{
+  display:grid; gap:1rem;
+  grid-template-columns:repeat(3,1fr);
+}
+@media (max-width:900px){ .price-grid{ grid-template-columns:repeat(2,1fr) } }
+@media (max-width:600px){ .price-grid{ grid-template-columns:1fr } }
+
+.price-card{
+  background:var(--card);
+  border:1px solid #eee; border-radius:.9rem;
+  overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.06);
+  transition:transform .18s ease, box-shadow .18s ease;
+  display:flex; flex-direction:column;
+}
+.price-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow) }
+.price-card img{ width:100%; height:150px; object-fit:cover }
+.pc-body{ padding:.8rem .9rem 1rem }
+.price-card h3{ margin:.1rem 0 .2rem; color:var(--purple) }
+.price-card .sqft{ margin:.1rem 0; color:var(--muted); font-size:.95rem }
+.price-card .amount{ margin:.3rem 0 0; font-weight:800; color:var(--ink); font-size:1.05rem }
+
+/* Legacy alt: 3-across “box buttons” (if used elsewhere) */
 .pricing-grid{
   display:grid; gap:1rem;
   grid-template-columns:repeat(3,1fr);
 }
 @media (max-width:900px){ .pricing-grid{ grid-template-columns:repeat(2,1fr) } }
 @media (max-width:600px){ .pricing-grid{ grid-template-columns:1fr } }
-
 .pricing-card{
   background:var(--card);
   border:1px solid #eee; border-radius:.9rem;
@@ -231,6 +270,14 @@ h2{
 /* Inline form message */
 .form-message{ margin-top:.25rem; font-weight:700 }
 
+/* Honeypot hide */
+.hp{
+  position:absolute !important;
+  left:-9999px !important;
+  width:1px !important; height:1px !important;
+  overflow:hidden !important;
+}
+
 /* =========================================================
    Gallery / “Successful Clients”
 ========================================================= */
@@ -246,15 +293,22 @@ h2{
 }
 .gallery-item img{ width:100%; height:100%; object-fit:cover }
 
-/* Lightbox overlay (for script.js) */
+/* Lightbox (matches script.js) */
+.no-scroll{ overflow:hidden }
 .lightbox-overlay{
   position:fixed; inset:0; display:none;
   align-items:center; justify-content:center;
   background:rgba(0,0,0,.8); z-index:9999; padding:2rem;
 }
-.lightbox-overlay img{
-  max-width:100%; max-height:100%;
+.lightbox-figure{ max-width:min(90vw,1200px); max-height:80vh; margin:0 }
+.lightbox-figure img{
+  max-width:100%; max-height:70vh; display:block;
   border-radius:.5rem; box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+.lightbox-caption{ color:#fff; text-align:center; margin-top:.5rem; font-size:.95rem }
+.lightbox-close{
+  position:absolute; top:1rem; right:1rem;
+  font-size:2rem; line-height:1; border:0; background:transparent; color:#fff; cursor:pointer;
 }
 
 /* =========================================================
@@ -264,7 +318,3 @@ h2{
   background:#fff; color:#666; text-align:center;
   border-top:1px solid #eee; padding:1.2rem; margin-top:2rem;
 }
-
-/* Small utilities */
-.text-center{ text-align:center }
-.hidden{ display:none!important }
