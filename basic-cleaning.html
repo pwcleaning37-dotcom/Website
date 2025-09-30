@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Basic Cleaning | PW Cleaning</title>
   <meta name="description" content="Essential upkeep between deep cleans—dusting, floors, bathrooms, kitchen surfaces, and tidy-up." />
+  <meta name="theme-color" content="#6A1B9A" />
+  <link rel="preload" as="image" href="images/pw-hero.jpg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
     <div class="container header-row">
-      <a class="brand" href="index.html#home">PW <span>Cleaning</span></a>
-      <nav class="main-nav">
+      <a class="brand" href="index.html#home" aria-label="PW Cleaning home">
+        PW <span>Cleaning</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
         <a href="index.html#services">Services</a>
         <a href="index.html#why">Why Us</a>
         <a href="index.html#areas">Service Areas</a>
@@ -21,42 +27,117 @@
     </div>
   </header>
 
-  <section class="page-hero" style="background:
-    linear-gradient(135deg, #6A1B9A 0%, #B39DDB 60%, #3b1556 100%),
-    url('images/pw-hero.jpg') center/cover no-repeat;">
+  <section class="page-hero" style="
+    background:
+      linear-gradient(135deg, #6A1B9A 0%, #B39DDB 60%, #3b1556 100%),
+      url('images/pw-hero.jpg') center/cover no-repeat;">
     <div class="container">
       <h1>Basic Cleaning</h1>
       <p>Essential maintenance for a consistently tidy home.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>What’s Included</h2>
-      <ul class="features">
-        <li>General dusting (surfaces, furniture, décor)</li>
-        <li>Vacuum carpets & rugs; sweep & mop hard floors</li>
-        <li>Bathrooms: toilets, sinks, mirrors, tubs/showers</li>
-        <li>Kitchen counters & exterior appliances</li>
-        <li>Surface tidy-up & trash removal</li>
-      </ul>
+  <main id="main">
+    <section class="section" aria-labelledby="whats-included">
+      <div class="container">
+        <h2 id="whats-included">What’s Included</h2>
+        <ul class="features">
+          <li>General dusting (surfaces, furniture, décor)</li>
+          <li>Vacuum carpets & rugs; sweep & mop hard floors</li>
+          <li>Bathrooms: toilets, sinks, mirrors, tubs/showers</li>
+          <li>Kitchen counters & exterior appliances</li>
+          <li>Surface tidy-up & trash removal</li>
+        </ul>
 
-      <h2 class="center">Average Pricing</h2>
-      <div class="price-grid">
-        <div class="price-card"><img src="images/basic-clean.jpg" alt=""><div class="pc-body"><h3>1-Bedroom</h3><p class="sqft">600–800 sqft</p><p class="amount">$90 – $120</p></div></div>
-        <div class="price-card"><img src="images/basic-clean.jpg" alt=""><div class="pc-body"><h3>2-Bedroom</h3><p class="sqft">801–1200 sqft</p><p class="amount">$110 – $140</p></div></div>
-        <div class="price-card"><img src="images/basic-clean.jpg" alt=""><div class="pc-body"><h3>3-Bedroom</h3><p class="sqft">1201–2500 sqft</p><p class="amount">$130 – $170</p></div></div>
-        <div class="price-card"><img src="images/basic-clean.jpg" alt=""><div class="pc-body"><h3>4-Bedroom</h3><p class="sqft">1800–3000 sqft</p><p class="amount">$160 – $220</p></div></div>
-        <div class="price-card"><img src="images/basic-clean.jpg" alt=""><div class="pc-body"><h3>5-Bedroom</h3><p class="sqft">2500–4000 sqft</p><p class="amount">$200 – $260</p></div></div>
-        <div class="price-card"><img src="images/basic-clean.jpg" alt=""><div class="pc-body"><h3>6-Bedroom</h3><p class="sqft">2700–6000 sqft</p><p class="amount">$240 – $320</p></div></div>
+        <h2 class="center" id="avg-pricing">Average Pricing</h2>
+        <div class="price-grid" role="list" aria-labelledby="avg-pricing">
+          <article class="price-card" role="listitem">
+            <img src="images/basic-clean.jpg" alt="Basic clean for a 1-bedroom home" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>1-Bedroom</h3>
+              <p class="sqft">600–800 sqft</p>
+              <p class="amount">$90 – $120</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/basic-clean.jpg" alt="Basic clean for a 2-bedroom home" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>2-Bedroom</h3>
+              <p class="sqft">801–1200 sqft</p>
+              <p class="amount">$110 – $140</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/basic-clean.jpg" alt="Basic clean for a 3-bedroom home" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>3-Bedroom</h3>
+              <p class="sqft">1201–2500 sqft</p>
+              <p class="amount">$130 – $170</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/basic-clean.jpg" alt="Basic clean for a 4-bedroom home" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>4-Bedroom</h3>
+              <p class="sqft">1800–3000 sqft</p>
+              <p class="amount">$160 – $220</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/basic-clean.jpg" alt="Basic clean for a 5-bedroom home" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>5-Bedroom</h3>
+              <p class="sqft">2500–4000 sqft</p>
+              <p class="amount">$200 – $260</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/basic-clean.jpg" alt="Basic clean for a 6-bedroom home" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>6-Bedroom</h3>
+              <p class="sqft">2700–6000 sqft</p>
+              <p class="amount">$240 – $320</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="small muted center" style="margin-top:.4rem">
+          Final pricing depends on home size and condition. Estimates above are averages.
+        </p>
+
+        <p class="center" style="margin-top:1rem">
+          <a class="btn" href="index.html#contact">Request a Free Quote</a>
+        </p>
+
+        <p class="center">
+          <a class="back-link" href="index.html#services" aria-label="Back to Services">← Back to Services</a>
+        </p>
       </div>
+    </section>
+  </main>
 
-      <p class="center" style="margin-top:1rem"><a class="btn" href="index.html#contact">Request a Free Quote</a></p>
-      <p class="center"><a class="back-link" href="index.html#services">← Back to Services</a></p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      © <span id="year"></span> PW Cleaning · Sioux Falls, SD
+      <!-- Optional direct call link:
+      <span class="sep">·</span> <a href="tel:+16057364171">+1 (605) 736-4171</a>
+      -->
+      <noscript>© 2025 PW Cleaning · Sioux Falls, SD</noscript>
     </div>
-  </section>
+  </footer>
 
-  <footer class="site-footer"><div class="container">© <span id="year"></span> PW Cleaning · Sioux Falls, SD</div></footer>
   <script src="script.js" defer></script>
+  <script>
+    // Lightweight year fallback in case script.js doesn't set it
+    (function () {
+      var y = document.getElementById('year');
+      if (y && !y.textContent) y.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
