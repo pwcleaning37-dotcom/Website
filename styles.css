@@ -200,7 +200,18 @@ h2{
   display:flex; flex-direction:column;
 }
 .price-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow) }
-.price-card img{ width:100%; height:150px; object-fit:cover }
+
+/* ✅ Uniform thumbnails on all pricing cards */
+.price-card img{
+  display:block;
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  object-position:center;
+  border-top-left-radius:.9rem;
+  border-top-right-radius:.9rem;
+}
+
 .pc-body{ padding:.8rem .9rem 1rem }
 .price-card h3{ margin:.1rem 0 .2rem; color:var(--purple) }
 .price-card .sqft{ margin:.1rem 0; color:var(--muted); font-size:.95rem }
@@ -213,6 +224,7 @@ h2{
 }
 @media (max-width:900px){ .pricing-grid{ grid-template-columns:repeat(2,1fr) } }
 @media (max-width:600px){ .pricing-grid{ grid-template-columns:1fr } }
+
 .pricing-card{
   background:var(--card);
   border:1px solid #eee; border-radius:.9rem;
@@ -220,7 +232,18 @@ h2{
   transition:transform .18s ease, box-shadow .18s ease;
 }
 .pricing-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow) }
-.pricing-card img{ width:100%; height:140px; object-fit:cover }
+
+/* ✅ Match legacy card thumbnails to 150px too */
+.pricing-card img{
+  display:block;
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  object-position:center;
+  border-top-left-radius:.9rem;
+  border-top-right-radius:.9rem;
+}
+
 .pricing-card h3{ margin:.7rem 1rem .1rem; color:var(--purple) }
 .pricing-card p{ margin:0 1rem .4rem }
 .pricing-card .price{ margin:.3rem 1rem 1rem; font-weight:800; color:var(--ink) }
