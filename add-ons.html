@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Add-On Services | PW Cleaning</title>
   <meta name="description" content="Customize your cleaning with interior windows, appliance cleaning, linen changes, pet hair removal, and more." />
+  <meta name="theme-color" content="#6A1B9A" />
+  <link rel="preload" as="image" href="images/pw-hero.jpg" imagesrcset="images/pw-hero.jpg 1200w" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
     <div class="container header-row">
-      <a class="brand" href="index.html#home">PW <span>Cleaning</span></a>
-      <nav class="main-nav">
+      <a class="brand" href="index.html#home" aria-label="PW Cleaning home">
+        PW <span>Cleaning</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
         <a href="index.html#services">Services</a>
         <a href="index.html#why">Why Us</a>
         <a href="index.html#areas">Service Areas</a>
@@ -21,36 +27,110 @@
     </div>
   </header>
 
-  <section class="page-hero" style="background:
-    linear-gradient(135deg, #6A1B9A 0%, #B39DDB 60%, #3b1556 100%),
-    url('images/pw-hero.jpg') center/cover no-repeat;">
+  <section class="page-hero" style="
+    background:
+      linear-gradient(135deg, #6A1B9A 0%, #B39DDB 60%, #3b1556 100%),
+      url('images/pw-hero.jpg') center/cover no-repeat;
+    ">
     <div class="container">
       <h1>Add-On Services</h1>
       <p>Upgrade any visit with the extras you need.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>Popular Add-Ons</h2>
-      <div class="price-grid">
-        <div class="price-card"><img src="images/add-ons.jpg" alt=""><div class="pc-body"><h3>Inside Fridge</h3><p class="sqft">Empty preferred</p><p class="amount">$50 – $60</p></div></div>
-        <div class="price-card"><img src="images/add-ons.jpg" alt=""><div class="pc-body"><h3>Inside Oven</h3><p class="sqft">Degrease + wipe out</p><p class="amount">$25 – $40</p></div></div>
-        <div class="price-card"><img src="images/add-ons.jpg" alt=""><div class="pc-body"><h3>Interior Windows</h3><p class="sqft">Main areas</p><p class="amount">$40 – $80</p></div></div>
-        <div class="price-card"><img src="images/add-ons.jpg" alt=""><div class="pc-body"><h3>Bed Linen Change</h3><p class="sqft">Per bed</p><p class="amount">$10 – $20</p></div></div>
-        <div class="price-card"><img src="images/add-ons.jpg" alt=""><div class="pc-body"><h3>Pet Hair Removal</h3><p class="sqft">Extra vacuum/time</p><p class="amount">$20 – $40</p></div></div>
-        <div class="price-card"><img src="images/add-ons.jpg" alt=""><div class="pc-body"><h3>Restroom Sanitization</h3><p class="sqft">Home/Office</p><p class="amount">$25 – $75</p></div></div>
+  <main id="main">
+    <section class="section" aria-labelledby="popular-addons">
+      <div class="container">
+        <h2 id="popular-addons">Popular Add-Ons</h2>
+
+        <div class="price-grid" role="list">
+          <article class="price-card" role="listitem">
+            <img src="images/add-ons.jpg" alt="Refrigerator interior being cleaned" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Inside Fridge</h3>
+              <p class="sqft">Empty preferred</p>
+              <p class="amount">$50 – $60</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/add-ons.jpg" alt="Oven interior degreasing and wipe-out" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Inside Oven</h3>
+              <p class="sqft">Degrease + wipe out</p>
+              <p class="amount">$25 – $40</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/add-ons.jpg" alt="Interior windows being washed and dried" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Interior Windows</h3>
+              <p class="sqft">Main areas</p>
+              <p class="amount">$40 – $80</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/add-ons.jpg" alt="Fresh bed linens being changed" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Bed Linen Change</h3>
+              <p class="sqft">Per bed</p>
+              <p class="amount">$10 – $20</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/add-ons.jpg" alt="Pet hair removal with vacuum on upholstery" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Pet Hair Removal</h3>
+              <p class="sqft">Extra vacuum/time</p>
+              <p class="amount">$20 – $40</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/add-ons.jpg" alt="Restroom fixtures being sanitized" loading="lazy" decoding="async" />
+            <div class="pc-body">
+              <h3>Restroom Sanitization</h3>
+              <p class="sqft">Home/Office</p>
+              <p class="amount">$25 – $75</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="small muted center" style="margin-top:.4rem">
+          Final pricing depends on size and condition. Add-ons may extend appointment time.
+        </p>
+
+        <p class="center" style="margin-top:1rem">
+          <a class="btn" href="index.html#contact">Add to Your Quote</a>
+        </p>
+
+        <p class="center">
+          <a class="back-link" href="index.html#services" aria-label="Back to Services">← Back to Services</a>
+        </p>
       </div>
+    </section>
+  </main>
 
-      <p class="small muted center" style="margin-top:.4rem">
-        Final pricing depends on size/condition. Add-ons may extend appointment time.
-      </p>
-      <p class="center" style="margin-top:1rem"><a class="btn" href="index.html#contact">Add to Your Quote</a></p>
-      <p class="center"><a class="back-link" href="index.html#services">← Back to Services</a></p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      © <span id="year"></span> PW Cleaning · Sioux Falls, SD
+      <!-- Optional direct call link:
+      <span class="sep">·</span> <a href="tel:+16057364171">+1 (605) 736-4171</a>
+      -->
+      <noscript>© 2025 PW Cleaning · Sioux Falls, SD</noscript>
     </div>
-  </section>
+  </footer>
 
-  <footer class="site-footer"><div class="container">© <span id="year"></span> PW Cleaning · Sioux Falls, SD</div></footer>
   <script src="script.js" defer></script>
+  <script>
+    // Lightweight year fallback in case script.js doesn't set it
+    (function () {
+      var y = document.getElementById('year');
+      if (y && !y.textContent) y.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
