@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PW Cleaning | Sioux Falls House & Office Cleaning</title>
   <meta name="description" content="PW Cleaning provides reliable house and office cleaning in Sioux Falls, Tea, Brookings, and nearby communities. Licensed & insured. Free quotes." />
+  <!-- IMPORTANT: ensures relative paths resolve under /Website/ on GitHub Pages -->
+  <base href="/Website/">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -24,8 +26,8 @@
     </div>
   </header>
 
-  <!-- HERO (uses background image with overlay; set in inline style) -->
-  <section id="home" class="hero" style="background-image:url('images/pw-hero.jpg');">
+  <!-- HERO -->
+  <section id="home" class="hero" style="background-image:url('./images/pw-hero.jpg');">
     <div class="hero-content container">
       <h1>Professional Cleaning Services</h1>
       <p>Making homes and offices shine across Sioux Falls and nearby areas.</p>
@@ -42,7 +44,7 @@
       <div class="service-grid">
         <a class="service-link" href="basic-cleaning.html">
           <article class="service">
-            <img src="images/basic-clean.jpg" alt="Basic house cleaning" />
+            <img src="images/basic-clean.jpg" alt="Basic house cleaning" loading="lazy" />
             <h3>Basic Cleaning</h3>
             <p>Essential upkeep between deep cleans.</p>
           </article>
@@ -50,7 +52,7 @@
 
         <a class="service-link" href="deep-cleaning.html">
           <article class="service">
-            <img src="images/deep-clean.jpg" alt="Deep cleaning service" />
+            <img src="images/deep-clean.jpg" alt="Deep cleaning service" loading="lazy" />
             <h3>Deep Cleaning</h3>
             <p>Extra attention to edges, corners, and build-up.</p>
           </article>
@@ -58,7 +60,7 @@
 
         <a class="service-link" href="move-in-out.html">
           <article class="service">
-            <img src="images/move-in.jpg" alt="Move-in move-out cleaning" />
+            <img src="images/move-in.jpg" alt="Move-in move-out cleaning" loading="lazy" />
             <h3>Move-In / Move-Out</h3>
             <p>Make your new place sparkle or leave the old one spotless.</p>
           </article>
@@ -66,7 +68,7 @@
 
         <a class="service-link" href="office-cleaning.html">
           <article class="service">
-            <img src="images/office-cleaning.jpg" alt="Office janitorial services" />
+            <img src="images/office-cleaning.jpg" alt="Office janitorial services" loading="lazy" />
             <h3>Office / Commercial</h3>
             <p>Desks, conference rooms, kitchens, restrooms, trash & floors.</p>
           </article>
@@ -74,7 +76,7 @@
 
         <a class="service-link" href="add-ons.html">
           <article class="service">
-            <img src="images/add-ons.jpg" alt="Add-on cleaning services" />
+            <img src="images/add-ons.jpg" alt="Add-on cleaning services" loading="lazy" />
             <h3>Add-Ons</h3>
             <p>Inside oven/fridge, interior windows, bed linens, pet hair removal.</p>
           </article>
@@ -104,12 +106,11 @@
     </div>
   </section>
 
-  <!-- SUCCESSFUL CLIENTS (catalog button target) -->
+  <!-- SUCCESSFUL CLIENTS -->
   <section id="clients" class="section alt">
     <div class="container">
       <h2>Successful Clients</h2>
       <p class="muted" style="text-align:center">Snapshots of completed homes and commercial jobs. (Coming soon)</p>
-      <!-- Later: add a gallery grid fed by your JSON/Sheet/adalo endpoint -->
     </div>
   </section>
 
