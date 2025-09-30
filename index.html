@@ -9,9 +9,6 @@
   <meta name="theme-color" content="#6A1B9A" />
   <link rel="preload" as="image" href="images/pw-hero.jpg" />
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Bootstrap (for the carousel) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -117,80 +114,84 @@
       </div>
     </section>
 
-    <!-- SUCCESSFUL CLIENTS (Carousel) -->
+    <!-- SUCCESSFUL CLIENTS (Cards like the service buttons) -->
     <section id="clients" class="section alt" aria-labelledby="clients-heading">
       <div class="container">
         <h2 id="clients-heading">Successful Clients</h2>
+        <div class="service-grid">
 
-        <div id="successCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
+          <a class="service-link" href="images/bdeepclean.jpg" target="_blank" rel="noopener">
+            <article class="service">
+              <img src="images/bdeepclean.jpg" alt="Kitchen before deep cleaning" loading="lazy" decoding="async" />
+              <h3>Before: Deep Clean</h3>
+              <p>Heavy kitchen build-up prior to service.</p>
+            </article>
+          </a>
 
-            <!-- 1) Before deep clean -->
-            <div class="carousel-item active">
-              <img src="images/bdeepclean.jpg" class="d-block w-50" alt="Kitchen before deep cleaning">
-            </div>
+          <a class="service-link" href="images/adeepclean.jpg" target="_blank" rel="noopener">
+            <article class="service">
+              <img src="images/adeepclean.jpg" alt="Kitchen after deep cleaning" loading="lazy" decoding="async" />
+              <h3>After: Deep Clean</h3>
+              <p>Sanitized, decluttered, and spotless.</p>
+            </article>
+          </a>
 
-            <!-- 2) After deep clean -->
-            <div class="carousel-item">
-              <img src="images/adeepclean.jpg" class="d-block w-50" alt="Kitchen after deep cleaning">
-            </div>
+          <a class="service-link" href="images/bover.jpg" target="_blank" rel="noopener">
+            <article class="service">
+              <img src="images/bover.jpg" alt="Oven before cleaning" loading="lazy" decoding="async" />
+              <h3>Before: Oven</h3>
+              <p>Grease and baked-on residue.</p>
+            </article>
+          </a>
 
-            <!-- 3) Before oven -->
-            <div class="carousel-item">
-              <img src="images/bover.jpg" class="d-block w-50" alt="Oven before cleaning">
-            </div>
+          <a class="service-link" href="images/aover.jpg" target="_blank" rel="noopener">
+            <article class="service">
+              <img src="images/aover.jpg" alt="Oven after cleaning" loading="lazy" decoding="async" />
+              <h3>After: Oven</h3>
+              <p>Degreased and polished to shine.</p>
+            </article>
+          </a>
 
-            <!-- 4) After oven -->
-            <div class="carousel-item">
-              <img src="images/aover.jpg" class="d-block w-50" alt="Oven after cleaning">
-            </div>
+          <a class="service-link" href="images/bfloor.jpg" target="_blank" rel="noopener">
+            <article class="service">
+              <img src="images/bfloor.jpg" alt="Tile floor before cleaning" loading="lazy" decoding="async" />
+              <h3>Before: Floor</h3>
+              <p>Dull tiles and grimy grout lines.</p>
+            </article>
+          </a>
 
-            <!-- 5) Before floor -->
-            <div class="carousel-item">
-              <img src="images/bfloor.jpg" class="d-block w-50" alt="Tile floor before cleaning">
-            </div>
+          <a class="service-link" href="images/afloor.jpg" target="_blank" rel="noopener">
+            <article class="service">
+              <img src="images/afloor.jpg" alt="Tile floor after cleaning" loading="lazy" decoding="async" />
+              <h3>After: Floor</h3>
+              <p>Bright tiles and refreshed grout.</p>
+            </article>
+          </a>
 
-            <!-- 6) After floor -->
-            <div class="carousel-item">
-              <img src="images/afloor.jpg" class="d-block w-50" alt="Tile floor after cleaning">
-            </div>
+          <a class="service-link" href="images/astove1.jpg" target="_blank" rel="noopener">
+            <article class="service">
+              <img src="images/astove1.jpg" alt="Stovetop before cleaning" loading="lazy" decoding="async" />
+              <h3>Before: Stove</h3>
+              <p>Burner stains and splatter.</p>
+            </article>
+          </a>
 
-            <!-- 7) Before stove -->
-            <div class="carousel-item">
-              <img src="images/astove1.jpg" class="d-block w-50" alt="Stovetop before cleaning">
-            </div>
+          <a class="service-link" href="images/bstove.jpg" target="_blank" rel="noopener">
+            <article class="service">
+              <img src="images/bstove.jpg" alt="Stovetop after cleaning" loading="lazy" decoding="async" />
+              <h3>After: Stove</h3>
+              <p>Clean burners and stainless finish.</p>
+            </article>
+          </a>
 
-            <!-- 8) After stove -->
-            <div class="carousel-item">
-              <img src="images/bstove.jpg" class="d-block w-50" alt="Stovetop after cleaning">
-            </div>
+          <a class="service-link" href="images/amoveout.jpg" target="_blank" rel="noopener">
+            <article class="service">
+              <img src="images/amoveout.jpg" alt="Move-out cleaning transformation" loading="lazy" decoding="async" />
+              <h3>Move-Out Result</h3>
+              <p>Ready-to-show space after turnover.</p>
+            </article>
+          </a>
 
-            <!-- 9) Move-out result -->
-            <div class="carousel-item">
-              <img src="images/amoveout.jpg" class="d-block w-50" alt="Move-out cleaning transformation">
-            </div>
-          </div>
-
-          <!-- Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#successCarousel" data-bs-slide="prev" aria-label="Previous slide">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#successCarousel" data-bs-slide="next" aria-label="Next slide">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </button>
-
-          <!-- Indicators -->
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#successCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#successCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#successCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#successCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#successCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            <button type="button" data-bs-target="#successCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-            <button type="button" data-bs-target="#successCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-            <button type="button" data-bs-target="#successCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-            <button type="button" data-bs-target="#successCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
-          </div>
         </div>
       </div>
     </section>
@@ -227,7 +228,6 @@
 
           <form id="contactForm" action="https://formspree.io/f/xrbldwdg" method="POST">
             <input type="hidden" name="_subject" value="PW Cleaning Website Quote" />
-            <!-- Spam honeypot -->
             <label class="hp" for="company">Company</label>
             <input class="hp" id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
 
@@ -270,12 +270,7 @@
   </footer>
 
   <script src="script.js" defer></script>
-
-  <!-- Bootstrap JS (for the carousel) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
   <script>
-    // Lightweight year fallback if script.js doesn't set it
     (function () {
       var y = document.getElementById('year');
       if (y) y.textContent = new Date().getFullYear();
