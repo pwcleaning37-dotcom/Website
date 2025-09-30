@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Deep Cleaning | PW Cleaning</title>
-  <meta name="description" content="Detail cleaning with extra attention to edges, corners, baseboards, kitchens, and bathrooms." />
+  <meta name="description" content="Detail cleaning with extra attention to edges, corners, baseboards, kitchens, and bathrooms."/>
   <meta name="theme-color" content="#6A1B9A" />
   <link rel="preload" as="image" href="images/pw-hero.jpg" />
   <link rel="stylesheet" href="styles.css?v=2" />
@@ -13,10 +13,11 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container header-row">
-      <a class="brand" href="index.html#home">PW <span>Cleaning</span></a>
+      <a class="brand" href="index.html#home" aria-label="PW Cleaning home">
+        PW <span>Cleaning</span>
+      </a>
       <nav class="main-nav" aria-label="Primary">
         <a href="index.html#services">Services</a>
         <a href="index.html#why">Why Us</a>
@@ -27,21 +28,20 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="page-hero" style="background:
-    linear-gradient(135deg, #6A1B9A 0%, #B39DDB 60%, #3b1556 100%),
-    url('images/pw-hero.jpg') center/cover no-repeat;">
+  <section class="page-hero" style="
+    background:
+      linear-gradient(135deg, #6A1B9A 0%, #B39DDB 60%, #3b1556 100%),
+      url('images/pw-hero.jpg') center/cover no-repeat;">
     <div class="container">
-      <h1>Deep Cleaning</h1>
-      <p>Extra detail in kitchens, bathrooms, and high-touch areas.</p>
+      <h1>Basic Cleaning</h1>
+      <p>Essential maintenance for a consistently tidy home.</p>
     </div>
   </section>
 
   <main id="main">
-    <!-- What's Included -->
-    <section class="section">
+    <section class="section" aria-labelledby="whats-included">
       <div class="container">
-        <h2>What’s Included</h2>
+        <h2 id="whats-included">What’s Included</h2>
         <ul class="features">
           <li>Everything in Basic Cleaning</li>
           <li>Baseboards, doors/trim, switch plates, vents</li>
@@ -50,9 +50,92 @@
           <li>Edges, corners, and buildup removal</li>
         </ul>
 
-        <!-- Pricing -->
-        <h2 class="center">Average Pricing</h2>
-        <div class="price-grid">
-          <div class="price-card"><img src="images/1bed.jpg" alt=""><div class="pc-body"><h3>1-Bedroom</h3><p class="sqft">600–800 sqft</p><p class="amount">$150 – $200</p></div></div>
-          <div class="price-card"><img src="images/2bed.jpg" alt=""><div class="pc-body"><h3>2-Bedroom</h3><p class="sqft">801–1200 sqft</p><p class="amount">$170 – $220</p></div></div>
-          <div class="price-card"><img src="images/3bed.jpg" alt=""><div class="pc-body"><h3>3-Bedroom</h3><p class="sqft">1201–2500 sqft</p><p class="amoun
+        <h2 class="center" id="avg-pricing">Average Pricing</h2>
+        <div class="price-grid" role="list" aria-labelledby="avg-pricing">
+          <article class="price-card" role="listitem">
+            <img src="images/1bed.jpg" alt="1-bedroom home — example floor plan" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>1-Bedroom</h3>
+              <p class="sqft">600–800 sqft</p>
+              <p class="amount">$150 – $200</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/2bed.jpg" alt="2-bedroom home — example floor plan" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>2-Bedroom</h3>
+              <p class="sqft">801–1200 sqft</p>
+              <p class="amount">$170 – $220</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/3bed.jpg" alt="3-bedroom home — example floor plan" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>3-Bedroom</h3>
+              <p class="sqft">1201–2500 sqft</p>
+              <p class="amount">$220 – $320</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/4bed.jpg" alt="4-bedroom home — example floor plan" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>4-Bedroom</h3>
+              <p class="sqft">1800–3000 sqft</p>
+              <p class="amount">$300 – $420</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/5bed.jpg" alt="5-bedroom home — example floor plan" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>5-Bedroom</h3>
+              <p class="sqft">2500–4000 sqft</p>
+              <p class="amount">$375 – $480</p>
+            </div>
+          </article>
+
+          <article class="price-card" role="listitem">
+            <img src="images/6bed.jpg" alt="6-bedroom home — example floor plan" loading="lazy" decoding="async">
+            <div class="pc-body">
+              <h3>6-Bedroom</h3>
+              <p class="sqft">2700–6000 sqft</p>
+              <p class="amount">$410 – $600</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="small muted center" style="margin-top:.4rem">
+          Final pricing depends on home size and condition. Estimates are averages.
+        </p>
+
+        <p class="center" style="margin-top:1rem">
+          <a class="btn" href="index.html#contact">Request a Free Quote</a>
+        </p>
+
+        <p class="center">
+          <a class="back-link" href="index.html#services" aria-label="Back to Services">← Back to Services</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      © <span id="year"></span> PW Cleaning · Sioux Falls, SD
+      <noscript>© 2025 PW Cleaning · Sioux Falls, SD</noscript>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    // Year fallback if script.js doesn't set it
+    (function () {
+      var y = document.getElementById('year');
+      if (y && !y.textContent) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
