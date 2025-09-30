@@ -24,7 +24,7 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO (uses background image with overlay; set in inline style) -->
   <section id="home" class="hero" style="background-image:url('images/pw-hero.jpg');">
     <div class="hero-content container">
       <h1>Professional Cleaning Services</h1>
@@ -37,27 +37,140 @@
   <section id="services" class="section">
     <div class="container">
       <h2>Our Cleaning Services</h2>
+      <p class="muted" style="text-align:center">Choose a plan that fits your home and schedule.</p>
+
       <div class="service-grid">
-        <a class="service-link" href="basic-cleaning.html"><article class="service"><img src="images/basic-clean.jpg"><h3>Basic Cleaning</h3></article></a>
-        <a class="service-link" href="deep-cleaning.html"><article class="service"><img src="images/deep-clean.jpg"><h3>Deep Cleaning</h3></article></a>
-        <a class="service-link" href="move-in-out.html"><article class="service"><img src="images/move-in.jpg"><h3>Move-In/Out</h3></article></a>
-        <a class="service-link" href="office-cleaning.html"><article class="service"><img src="images/office-cleaning.jpg"><h3>Office Cleaning</h3></article></a>
-        <a class="service-link" href="add-ons.html"><article class="service"><img src="images/add-ons.jpg"><h3>Add-Ons</h3></article></a>
+        <a class="service-link" href="basic-cleaning.html">
+          <article class="service">
+            <img src="images/basic-clean.jpg" alt="Basic house cleaning" />
+            <h3>Basic Cleaning</h3>
+            <p>Essential upkeep between deep cleans.</p>
+          </article>
+        </a>
+
+        <a class="service-link" href="deep-cleaning.html">
+          <article class="service">
+            <img src="images/deep-clean.jpg" alt="Deep cleaning service" />
+            <h3>Deep Cleaning</h3>
+            <p>Extra attention to edges, corners, and build-up.</p>
+          </article>
+        </a>
+
+        <a class="service-link" href="move-in-out.html">
+          <article class="service">
+            <img src="images/move-in.jpg" alt="Move-in move-out cleaning" />
+            <h3>Move-In / Move-Out</h3>
+            <p>Make your new place sparkle or leave the old one spotless.</p>
+          </article>
+        </a>
+
+        <a class="service-link" href="office-cleaning.html">
+          <article class="service">
+            <img src="images/office-cleaning.jpg" alt="Office janitorial services" />
+            <h3>Office / Commercial</h3>
+            <p>Desks, conference rooms, kitchens, restrooms, trash & floors.</p>
+          </article>
+        </a>
+
+        <a class="service-link" href="add-ons.html">
+          <article class="service">
+            <img src="images/add-ons.jpg" alt="Add-on cleaning services" />
+            <h3>Add-Ons</h3>
+            <p>Inside oven/fridge, interior windows, bed linens, pet hair removal.</p>
+          </article>
+        </a>
       </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" class="section alt">
+    <div class="container">
+      <h2>Why Choose PW Cleaning</h2>
+      <ul class="icons">
+        <li>🕒 <strong>On-time & reliable</strong> — we confirm every visit.</li>
+        <li>🧼 <strong>Consistent checklists</strong> — same quality every time.</li>
+        <li>🧾 <strong>Transparent pricing</strong> — no surprises.</li>
+        <li>🌿 <strong>Eco options</strong> — upon request.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section id="areas" class="section">
+    <div class="container">
+      <h2>Service Areas</h2>
+      <p style="text-align:center">Sioux Falls • Tea • Brookings • Harrisburg • Brandon • Dell Rapids • Surrounding communities</p>
+    </div>
+  </section>
+
+  <!-- SUCCESSFUL CLIENTS (catalog button target) -->
+  <section id="clients" class="section alt">
+    <div class="container">
+      <h2>Successful Clients</h2>
+      <p class="muted" style="text-align:center">Snapshots of completed homes and commercial jobs. (Coming soon)</p>
+      <!-- Later: add a gallery grid fed by your JSON/Sheet/adalo endpoint -->
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faqs" class="section">
+    <div class="container">
+      <h2>FAQs</h2>
+      <details>
+        <summary>Do I need to be home?</summary>
+        <p>No — most clients provide a lock code or key. We text when finished.</p>
+      </details>
+      <details>
+        <summary>What about supplies?</summary>
+        <p>We bring everything. If you prefer certain products, tell us!</p>
+      </details>
+      <details>
+        <summary>Are you insured?</summary>
+        <p>Yes — fully insured. We treat every home with respect and care.</p>
+      </details>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section">
+  <section id="contact" class="section alt">
     <div class="container contact">
       <h2>Get a Free Quote</h2>
       <div class="contact-grid">
-        <div><p><strong>Call/Text:</strong> <a href="tel:+16057364171">+1 (605) 736-4171</a></p><p><strong>Email:</strong> <a href="mailto:pwcleaning37@gmail.com">pwcleaning37@gmail.com</a></p></div>
+        <div>
+          <p><strong>Call/Text:</strong> (605) 736-4171</p>
+          <p><strong>Email:</strong> <a href="mailto:pwcleaning37@gmail.com">pwcleaning37@gmail.com</a></p>
+          <p class="note">Tell us bedrooms, bathrooms, frequency (one-time, weekly, bi-weekly, monthly), and any add-ons.</p>
+        </div>
+        <form id="contactForm" action="https://formspree.io/f/xrbldwdg" method="POST">
+          <input type="hidden" name="_subject" value="PW Cleaning Website Quote" />
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" placeholder="Your name" required />
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@email.com" required />
+          <label for="frequency">How often?</label>
+          <select id="frequency" name="frequency">
+            <option value="">Select frequency</option>
+            <option>One-time</option>
+            <option>Weekly</option>
+            <option>Bi-weekly</option>
+            <option>Monthly</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Home size, preferred dates, add-ons…" required></textarea>
+          <button class="btn" type="submit">Request Quote</button>
+        </form>
       </div>
     </div>
   </section>
 
-  <footer class="site-footer"><div class="container">© 2025 PW Cleaning · Sioux Falls, SD</div></footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      © 2025 PW Cleaning · Sioux Falls, SD
+    </div>
+  </footer>
 
+  <script src="script.js" defer></script>
 </body>
 </html>
