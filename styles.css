@@ -144,3 +144,4 @@ section[id]{scroll-margin-top:80px}
 .f-brand{font-weight:900;font-size:1.25rem;color:#fff}.f-brand span{color:var(--gold)}
 .site-footer .copy{text-align:center;margin-top:1.5rem;padding-top:1rem;border-top:1px solid #ffffff22;font-size:.9rem}
 @media (max-width:720px){.site-footer{padding-bottom:5rem}}
+.main-nav a[aria-current="true"]:not(.btn){box-shadow:inset 0 -3px 0 var(--gold);opacity:1}
