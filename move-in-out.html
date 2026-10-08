@@ -4,63 +4,82 @@
   <base href="/Website/">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'" />
   <title>Move-In / Move-Out Cleaning | PW Cleaning</title>
   <meta name="description" content="Turnover-ready cleaning before moving in or after moving out." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#6A1B9A" />
+  <link rel="preload" as="image" href="images/pw-hero.jpg" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
     <div class="container header-row">
-      <a class="brand" href="index.html#home">PW <span>Cleaning</span></a>
-      <nav class="main-nav">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#why">Why Us</a>
-        <a href="index.html#areas">Service Areas</a>
-        <a href="index.html#faqs">FAQs</a>
+      <a class="brand" href="index.html#home" aria-label="PW Cleaning home">PW <span>Cleaning</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-opt" href="index.html#services">Services</a>
+        <a class="nav-opt" href="index.html#why">Why Us</a>
+        <a class="nav-opt" href="index.html#areas">Service Areas</a>
+        <a class="nav-opt" href="index.html#faqs">FAQs</a>
+        <a class="nav-opt" href="index.html#clients">Successful Clients</a>
         <a href="index.html#contact" class="btn btn-sm">Get a Quote</a>
       </nav>
     </div>
   </header>
-
-  <section class="page-hero" style="background:
-    linear-gradient(135deg, #6A1B9A 0%, #B39DDB 60%, #3b1556 100%),
-    url('images/pw-hero.jpg') center/cover no-repeat;">
-    <div class="container">
-      <h1>Move-In / Move-Out</h1>
-      <p>Make your new place sparkle or leave the old one spotless.</p>
-    </div>
+  <section class="page-hero" style="background:linear-gradient(135deg,#6A1B9A 0%,#B39DDB 60%,#3b1556 100%),url('images/pw-hero.jpg') center/cover no-repeat;">
+    <div class="container"><h1>Move-In / Move-Out</h1><p>Make your new place sparkle or leave the old one spotless.</p></div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>What’s Included</h2>
-      <ul class="features">
-        <li>Inside fridge & oven (upon request)</li>
-        <li>Cabinet fronts; interior on request (empty units)</li>
-        <li>Baseboards, doors/trim, fixtures, blinds (surface)</li>
-        <li>Bathrooms & kitchen detailed; floors throughout</li>
-        <li>Final wipe-down & ready-to-show finish</li>
-      </ul>
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h2>What’s Included</h2>
+        <ul class="features">
+          <li>Cabinet fronts; interior on request (empty units)</li>
+          <li>Baseboards, doors/trim, fixtures, blinds (surface)</li>
+          <li>Bathrooms &amp; kitchen detailed; floors throughout</li>
+          <li>Final wipe-down &amp; ready-to-show finish</li>
+          <li>Inside fridge &amp; oven available as <a href="add-ons.html">add-ons</a></li>
+        </ul>
 
-      <h2 class="center">Typical Pricing</h2>
-      <div class="price-grid">
-        <div class="price-card"><img src="images/1bed.jpg" alt=""><div class="pc-body"><h3>Studio / 1-Bed</h3><p class="sqft">Up to ~800 sqft</p><p class="amount">$150 – $260</p></div></div>
-        <div class="price-card"><img src="images/2bed.jpg" alt=""><div class="pc-body"><h3>2-Bedroom</h3><p class="sqft">~801–1200 sqft</p><p class="amount">$220 – $320</p></div></div>
-        <div class="price-card"><img src="images/3bed.jpg" alt=""><div class="pc-body"><h3>3-Bedroom</h3><p class="sqft">~1201–2500 sqft</p><p class="amount">$290 – $420</p></div></div>
-        <div class="price-card"><img src="images/4bed.jpg" alt=""><div class="pc-body"><h3>4-Bedroom</h3><p class="sqft">~1800–3000 sqft</p><p class="amount">$360 – $520</p></div></div>
-        <div class="price-card"><img src="images/5bed.jpg" alt=""><div class="pc-body"><h3>5-Bedroom</h3><p class="sqft">~2500–4000 sqft</p><p class="amount">$440 – $640</p></div></div>
-        <div class="price-card"><img src="images/6bed.jpg" alt=""><div class="pc-body"><h3>6-Bedroom</h3><p class="sqft">~2700–6000 sqft</p><p class="amount">$520 – $780</p></div></div>
+        <h2 class="center" id="typ-pricing">Typical Pricing</h2>
+        <div class="price-grid" role="list" aria-labelledby="typ-pricing">
+          <article class="price-card" role="listitem">
+            <img src="images/1bed.jpg" alt="Move-out cleaning, 1-bedroom home" width="400" height="150" loading="lazy" decoding="async" />
+            <div class="pc-body"><h3>1-Bedroom</h3><p class="sqft">Up to 800 sqft</p><p class="amount">$150 – $260</p></div>
+          </article>
+          <article class="price-card" role="listitem">
+            <img src="images/2bed.jpg" alt="Move-out cleaning, 2-bedroom home" width="400" height="150" loading="lazy" decoding="async" />
+            <div class="pc-body"><h3>2-Bedroom</h3><p class="sqft">801–1,200 sqft</p><p class="amount">$220 – $320</p></div>
+          </article>
+          <article class="price-card" role="listitem">
+            <img src="images/3bed.jpg" alt="Move-out cleaning, 3-bedroom home" width="400" height="150" loading="lazy" decoding="async" />
+            <div class="pc-body"><h3>3-Bedroom</h3><p class="sqft">1,201–1,800 sqft</p><p class="amount">$290 – $420</p></div>
+          </article>
+          <article class="price-card" role="listitem">
+            <img src="images/4bed.jpg" alt="Move-out cleaning, 4-bedroom home" width="400" height="150" loading="lazy" decoding="async" />
+            <div class="pc-body"><h3>4-Bedroom</h3><p class="sqft">1,801–2,500 sqft</p><p class="amount">$360 – $520</p></div>
+          </article>
+          <article class="price-card" role="listitem">
+            <img src="images/5bed.jpg" alt="Move-out cleaning, 5-bedroom home" width="400" height="150" loading="lazy" decoding="async" />
+            <div class="pc-body"><h3>5-Bedroom</h3><p class="sqft">2,501–3,500 sqft</p><p class="amount">$440 – $640</p></div>
+          </article>
+          <article class="price-card" role="listitem">
+            <img src="images/6bed.jpg" alt="Move-out cleaning, 6-bedroom home" width="400" height="150" loading="lazy" decoding="async" />
+            <div class="pc-body"><h3>6-Bedroom</h3><p class="sqft">3,501–6,000 sqft</p><p class="amount">$520 – $780</p></div>
+          </article>
+        </div>
+        <p class="small muted center" style="margin-top:.4rem">Prices vary with condition, empty/occupied status, and add-ons.</p>
+        <p class="center" style="margin-top:1rem"><a class="btn" href="index.html#contact">Request a Free Quote</a></p>
+        <p class="center"><a class="back-link" href="index.html#services">← Back to Services</a></p>
       </div>
+    </section>
+  </main>
 
-      <p class="small muted center" style="margin-top:.4rem">
-        Prices vary with condition, empty/occupied status, and add-ons.
-      </p>
-      <p class="center" style="margin-top:1rem"><a class="btn" href="index.html#contact">Request a Free Quote</a></p>
-      <p class="center"><a class="back-link" href="index.html#services">← Back to Services</a></p>
-    </div>
-  </section>
-
-  <footer class="site-footer"><div class="container">© <span id="year"></span> PW Cleaning · Sioux Falls, SD</div></footer>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">© <span id="year">2026</span> PW Cleaning · Sioux Falls, SD</div>
+  </footer>
+  <a class="call-fab" href="tel:+16057364171" aria-label="Call or text PW Cleaning">Call / Text</a>
   <script src="script.js" defer></script>
 </body>
 </html>
